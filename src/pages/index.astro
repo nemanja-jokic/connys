@@ -1,37 +1,17 @@
 ---
+
+import { Image } from '@astrojs/image/components';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import heroImage from '../images/hero_garden_light_bush.jpg';
+
 ---
 
 <Layout title="Conny Apartman">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<h1>Welcome to <span class="text-gradient">Conny's Apartman</span></h1>
+		<div class="image-wrapper">
+			<Image src={heroImage} aspectRatio="16:9"  alt="descriptive text" />
+		</div>
 	</main>
 </Layout>
 
@@ -39,12 +19,22 @@ import Card from '../components/Card.astro';
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 80ch;
 	}
 	h1 {
-		font-size: 3rem;
-		font-weight: 800;
+		font-size: 2.5rem;
+		font-weight: 700;
 		margin: 0;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 15px;
+		margin: 1rem 0 0;
+		box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+		-moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+		-webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+		-o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -77,5 +67,15 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
+	}
+	@media only screen and (max-width: 600px) {
+		main {
+			padding: unset;
+			max-width: unset;
+		}
+		h1 {
+				font-size: 1.5rem;
+		font-weight: 600;
+		}
 	}
 </style>

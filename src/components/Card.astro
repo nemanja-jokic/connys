@@ -1,8 +1,8 @@
 ---
 export interface Props {
-	title: string;
+	title?: string;
 	body: string;
-	href: string;
+	href?: string;
 }
 
 const { href, title, body } = Astro.props;
@@ -61,3 +61,10 @@ const { href, title, body } = Astro.props;
 		color: rgb(var(--accent));
 	}
 </style>
+<!-- 
+	<Card
+		href="https://astro.build/chat/"
+		title="Community"
+		body="Come say hi to our amazing Discord community. ❤️"
+	/>
+ -->

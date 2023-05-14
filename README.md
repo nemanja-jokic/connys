@@ -59,3 +59,4 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 PLUGINS
 IMAGE PLUGIN https://docs.astro.build/en/guides/integrations-guide/image/#usage
 SEO PLUGIN https://github.com/jonasmerlin/astro-seo
+I18NEXT https://github.com/yassinedoghri/astro-i18next#3-start-translating

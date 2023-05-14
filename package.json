@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/image": "^0.16.8",
     "astro": "^2.4.5",
+    "astro-i18next": "^1.0.0-beta.21",
     "astro-seo": "^0.7.2",
     "sharp": "^0.32.1"
   }
