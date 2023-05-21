@@ -2,27 +2,74 @@
 
 import { Image } from '@astrojs/image/components';
 import Layout from '../layouts/Layout.astro';
-import heroImage from '../images/hero_garden_light_bush.jpg';
-
+import heroImage from '../images/welcome.jpg';
+import '@fontsource/mr-bedfort';
+import '@fontsource/redressed';
 ---
 
 <Layout title="Conny Apartman">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Conny's Apartman</span></h1>
+		<div>
+			<div class="content-wrapper">
+				<div class="welcome-wrapper">
+					<div class="circle orange"></div>
+					<div class="circle blue"></div>
+					<h1>Welcome</h1>
+				</div>					
+			</div>
+			<p>
+				Welcome to Conny and Andras Home! 
+				Conny and Andras, avid travelers and passionate hosts, 
+				have created a haven that reflects their love for hospitality.
+			    Having explored numerous corners of the world, they understand the importance of finding a home away from home
+			</p>
+		</div>
+		
 		<div class="image-wrapper">
-			<Image src={heroImage} aspectRatio="16:9"  alt="descriptive text" />
+			<Image src={heroImage} aspectRatio="16:9"  alt="View of the entrance to the property, warmly welcoming sculpture" />
 		</div>
 	</main>
 </Layout>
 
 <style>
 	main {
+		gap: 10%;
+		display: flex;
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 80ch;
+		max-width: 80%;
+		align-items: center;
 	}
+	.welcome-wrapper {
+		position: relative;
+	}
+	.circle {
+		position: absolute;
+		border-radius: 50%;
+	}
+	.orange {
+		left: -2rem;
+		top: -.5rem;
+		width: 7rem;
+		height: 7rem;
+		background-color: #ff9a00;
+	}
+	.blue {
+		left: -4rem;
+		top: 3.5rem;
+		width: 4rem;
+		height: 4rem;
+		background-color: #5b886cb3;
+	}
+	p {
+		margin: 0;
+		font-size: 1.5rem;
+		font-family: 'Redressed', sans-serif;
+	}
+	
 	h1 {
-		font-size: 2.5rem;
+		position: relative;
+		font-family: 'Mr Bedfort', sans-serif;
+		font-size: 5.5rem;
 		font-weight: 700;
 		margin: 0;
 	}
@@ -36,6 +83,10 @@ import heroImage from '../images/hero_garden_light_bush.jpg';
 		-webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
 		-o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
 	}
+	.image-wrapper {
+		min-width: 300px;
+	}
+	
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
@@ -74,8 +125,22 @@ import heroImage from '../images/hero_garden_light_bush.jpg';
 			max-width: unset;
 		}
 		h1 {
-				font-size: 1.5rem;
+				/* font-size: 1.5rem; */
 		font-weight: 600;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		main {
+			flex-wrap: wrap-reverse;
+			max-width: unset;
+		}
+		main p {
+			margin: 0 .7rem 2rem;
+		}
+		.content-wrapper {
+			display: flex;
+			justify-content: center;
+			margin-top: 2rem;
 		}
 	}
 </style>
