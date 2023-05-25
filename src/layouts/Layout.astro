@@ -1,11 +1,14 @@
 ---
 import { SEO } from "astro-seo";
 import i18next, { t } from "i18next";
+import NavBar from "../components/NavBar.astro";
+import '@fontsource/mr-bedfort';
+import '@fontsource/redressed';
 export interface Props {
-	title: string;
+	linkToApartman: string;
 }
 
-const { title } = Astro.props;
+const { linkToApartman } = Astro.props;
 
 
 ---
@@ -19,27 +22,15 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<SEO
 			title={t('site.title')}
-			description={`Experience the ultimate getaway in Tiszavasvár with Connys Apartman Tiszavasvár. 
-			Our meticulously designed and fully equipped apartments offer the perfect accommodation in the 
-			heart of the Tiszavasvári settlement. Whether you're seeking a short-term retreat or a longer stay, our 
-			friendly and tastefully furnished apartments cater to your every need.Family-friendly and equipped with essential 
-			amenities, our apartments provide a seamless experience for both adults and children. Enjoy the convenience of a
-			table high chair, cot, baby feeding set, baby toys, portable cot, bathtub, baby food heating option, 
-			and children's bed linen, ensuring a comfortable and stress-free stay for your little ones.Rest easy 
-			knowing that our premises offer a secure and camera-monitored parking lot, allowing you to park your vehicle free of charge. 
-			Immerse yourself in the soothing ambiance of our private balcony or terrace, 
-			where you can unwind and bask in the pleasant weather at any time.
-			Indulge in the comfort of our air-conditioned apartments, providing respite from the summer heat. 
-			Stay connected with complimentary high-speed wireless internet access (WiFi) throughout your stay, 
-			allowing you to work, stream, and browse with ease. Each apartment boasts a private bathroom, guaranteeing privacy 
-			and convenience during your visit. We've left no stone unturned to ensure your utmost satisfaction and relaxation.
-			Discover the beauty of Tiszavasvár while enjoying the comforts of Connys Apartman Tiszavasvár. Book your stay today and immerse 
-			yourself in the perfect blend of comfort, convenience, and warm hospitality.`}		
+			description={t('site.description')}	
 		/>
 	</head>
 	<body>
-		<!-- @TODO NAV  -->
-		<slot />
+		<NavBar linkToApartman={linkToApartman} />
+		<div style="margin-top: 4rem;">
+			<slot />
+		</div>
+		
 		<!-- @TODO FOOTER -->
 	</body>
 </html>

@@ -1,0 +1,38 @@
+---
+export interface Props {
+	linkToApartman: string;
+}
+
+const { linkToApartman } = Astro.props;
+---
+
+
+<button class="book-now-button"><a href={linkToApartman}>Book Now</a></button>
+
+<style>
+      .book-now-button {
+        background-color: #779582;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .book-now-button:hover {
+        background-color: #89a895;
+        transform: translateY(-2px);
+    }
+      a {
+        all: unset;
+        font-family: 'Redressed', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;   
+        letter-spacing: .2rem;   
+        cursor: pointer;  
+    }
+</style>

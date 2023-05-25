@@ -2,12 +2,10 @@
 
 import { Image } from '@astrojs/image/components';
 import Layout from '../layouts/Layout.astro';
-import heroImage from '../images/welcome.jpg';
-import '@fontsource/mr-bedfort';
-import '@fontsource/redressed';
+import heroImage from '../images/welcome.webp';
 ---
 
-<Layout title="Conny Apartman">
+<Layout linkToApartman="https://szallas.hu/connys-apartman-tiszavasvari">
 	<main>
 		<div>
 			<div class="content-wrapper">
@@ -26,7 +24,7 @@ import '@fontsource/redressed';
 		</div>
 		
 		<div class="image-wrapper">
-			<Image src={heroImage} aspectRatio="16:9"  alt="View of the entrance to the property, warmly welcoming sculpture" />
+			<Image src={heroImage}  alt="View of the entrance to the property, warmly welcoming sculpture" />
 		</div>
 	</main>
 </Layout>
@@ -68,7 +66,7 @@ import '@fontsource/redressed';
 	
 	h1 {
 		position: relative;
-		font-family: 'Mr Bedfort', sans-serif;
+		font-family: 'Mr Bedfort', sans-serif;		
 		font-size: 5.5rem;
 		font-weight: 700;
 		margin: 0;
@@ -131,7 +129,7 @@ import '@fontsource/redressed';
 	}
 	@media only screen and (max-width: 768px) {
 		main {
-			flex-wrap: wrap-reverse;
+			flex-wrap: wrap;
 			max-width: unset;
 		}
 		main p {

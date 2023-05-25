@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from '@astrojs/image/components';
+import fiveBadsImage from '../../images/dining-room-large-apartman.webp'
+import Button from '../../components/Button.astro';
+---
+
+<Layout linkToApartman="https://szallas.hu/connys-apartman-tiszavasvari#roomType-4731478">
+        <div class="apartman-wrapper">
+        <Image src={fiveBadsImage}  alt="Elegant dining space" />
+		<Button linkToApartman="https://szallas.hu/connys-apartman-tiszavasvari#roomType-4731478"/>
+    </div>
+</Layout>
+<style>
+	img {		
+		max-width: 100%;
+		height: auto;
+		border-radius: 15px;
+		margin: 1rem 0 0;
+		box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+		-moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+		-webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+		-o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+	}
+	.apartman-wrapper {
+        margin: auto;
+		max-width: 600px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+		gap: 1rem;
+    }
+</style>
